@@ -1,9 +1,11 @@
 package com.nt.controller;
 
+import java.util.Date;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.nt.service.IWishMessageGenerator;
 
@@ -20,12 +22,52 @@ public class ShowHomeController {
 		return "home";
 	}
 
+	/*
+	 * @RequestMapping("/wish.htm") public ModelAndView showWishMessage() {
+	 * System.out.println("ShowHomeController.showWishMessage()");
+	 * 
+	 * String msg = generator.wishMessage();
+	 * 
+	 * ModelAndView mav = new ModelAndView(); mav.addObject("wMsg", msg);
+	 * mav.addObject("sysDate", new Date());
+	 * 
+	 * mav.setViewName("result");
+	 * 
+	 * return mav; }
+	 */
+
+	/*
+	 * @RequestMapping("/wish.htm") public String showWishMessage(Model model) {
+	 * System.out.println("ShowHomeController.showWishMessage()");
+	 * 
+	 * String msg = generator.wishMessage();
+	 * 
+	 * model.addAttribute("wMsg", msg); model.addAttribute("sysDate", new Date());
+	 * 
+	 * return "result"; }
+	 */
+
+	/*
+	 * @RequestMapping("/wish.htm") public String showWishMessage(ModelMap model) {
+	 * System.out.println("ShowHomeController.showWishMessage()");
+	 * 
+	 * String msg = generator.wishMessage();
+	 * 
+	 * model.addAttribute("wMsg", msg); model.addAttribute("sysDate", new Date());
+	 * 
+	 * return "result"; }
+	 */
+
 	@RequestMapping("/wish.htm")
-	public ModelAndView showWishMessage() {
-		System.out.println("ShowHomeController.showWishMessage()");
+	public String showWishMessage(Map<String, Object> map) {
+		System.out.println("ShowHomeController.showWishMessage()-->" + map.getClass());
 
 		String msg = generator.wishMessage();
 
-		return new ModelAndView("result", "wMsg", msg);
+		map.put("wMsg", msg);
+		map.put("sysDate", new Date());
+
+		return "result";
 	}
+
 }

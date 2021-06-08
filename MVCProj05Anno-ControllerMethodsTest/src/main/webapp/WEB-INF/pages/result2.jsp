@@ -1,0 +1,1 @@
+<h1>From result2.jsp page</h1>

@@ -18,10 +18,7 @@
 					<td>Student No::</td> <td> <form:input path="sno"/> </td>
 				</tr>
 				<tr>
-					<td>Student Name::</td> <td> <form:input path="sname"/> </td>
-				</tr>
-				<tr>
-					<td>Student No::</td> <td> <form:input path="addrs"/> </td>
+					<td>Student Name::</td> <td> <form:input path="name"/> </td>
 				</tr>
 				<tr>
 					<td>Student No::</td> <td> <form:input path="avg"/> </td>

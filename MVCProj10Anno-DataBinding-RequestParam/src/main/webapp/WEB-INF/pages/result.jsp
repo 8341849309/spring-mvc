@@ -1,0 +1,7 @@
+<%@page isELIgnored="false" %>
+
+<h4>Student Details are::</h4> <br>
+<hr>
+
+<pre>${sno}   ${name}   ${avg}</pre>
+

@@ -16,6 +16,7 @@ import com.nt.validator.CustomerValidator;
 @Controller
 public class CustomerController {
 
+	
 	@Autowired
 	private ICustomerService ser;
 	@Autowired

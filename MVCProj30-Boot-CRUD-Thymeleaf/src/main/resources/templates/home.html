@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+
+	<h1>Welcome to Employee Page</h1>
+	<hr>
+	<br>
+	<pre>
+	<a th:href="@{show_emps}">Show Employees list</a>	  <a th:href="@{emp_form}">Create Employee</a>
+	</pre>
+	
+	<span th:text="${resultMsg}"></span>
+	
+</body>
+</html>

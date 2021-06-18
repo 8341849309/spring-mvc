@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employees</title>
+</head>
+<body>
+	
+	<h2>All Employees List</h2>
+	
+	<div th:if="${empList.empty}">
+		<h4>No Records Found</h4>
+	</div>
+	
+	<div th:if="${!empList.empty}">
+		<table>
+			<tr>
+					<td> No </td>
+					<td> Name </td>
+					<td> Address </td>
+					<td> Salary </td>
+			</tr>
+			
+				<tr th:each="emp:${empList}">
+					<td> <span th:text="${emp.eno}"></span> </td>
+					<td> <span th:text="${emp.ename}"></span> </td>
+					<td> <span th:text="${emp.addrs}"></span> </td>
+					<td> <span th:text="${emp.esal}"></span> </td>
+					<td> <a th:href="@{edit_emp(eno=${emp.eno})}">Edit</a> </td>
+					<td> <a th:href="@{delete?(eno=${emp.eno})}" 
+							onclick="return confirm(' Do u want to delete?')">Delete</a> 
+					</td>
+				</tr>
+		</table>
+	</div>
+	
+	<br>
+	
+	<a th:href="@{emp_form}">Create Employee</a>
+	
+	<a th:href="@{welcome}">Home</a>
+	
+	
+	
+</body>
+</html>
